@@ -43,7 +43,7 @@ Sayfa bölümleri `src/components/` içindeki bileşenlere ayrılmıştır. `App
 
 ### Yayın
 
-**Private** GitHub deposu Vercel'e bağlıdır. Derleme komutu `npm run build`, çıktı klasörü `dist` olarak ayarlanmıştır. Kaynak kod deposu private olsa da canlı site herkese açıktır.
+Proje Vercel üzerinden yayınlanır. Derleme komutu `npm run build`, çıktı klasörü `dist` olarak ayarlanmıştır.
 
 ## English
 
@@ -86,4 +86,4 @@ Page sections are split into components under `src/components/`. `App.jsx` passe
 
 ### Deployment
 
-The **private** GitHub repository is connected to Vercel. The build command is `npm run build`, and the output directory is `dist`. The live site is public while the source repository remains private.
+The project is deployed through Vercel. The build command is `npm run build`, and the output directory is `dist`.
