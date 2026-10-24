@@ -1,34 +1,89 @@
 # React Portfolio
 
-React + Vite implementation of the Figma **İkinci Alternatif** design (node `2:15`). It includes responsive sections, Context API theme/language preferences saved to localStorage, static JSON content, and a real Axios POST to JSONPlaceholder's public mock API. The owner's name, portrait, contact details, city, and education are set. Project cards link to three public repositories and verified live sites, with screenshots captured from those sites. Birth date and preferred role remain pending.
+[Türkçe](#türkçe) · [English](#english)
 
-## Run
+## Türkçe
+
+Figma'daki **İkinci Alternatif** tasarımının (`2:15` numaralı düğüm) React ve Vite ile geliştirilmiş portföy uygulaması. Masaüstü ve mobil ekranlara uyum sağlar. Tema ve dil tercihleri Context API ile yönetilir ve `localStorage` içinde saklanır. İçerik yerel JSON dosyasından okunur; proje verileri ayrıca Axios ile bir örnek API'ye gönderilir.
+
+**Canlı portföy:** https://react-portfolio-topaz-ten.vercel.app/
+
+**Canlı projeler:** [Kahve Durağı](https://coffee-app-react.vercel.app/) · [Movie Explorer](https://movie-explorer-react-sigma.vercel.app/) · [React Login Form](https://login-form-react-indol.vercel.app/)
+
+### Kurulum ve çalıştırma
 
 ```bash
 npm install
 npm run dev
 ```
 
-Run `npm test` and `npm run build` before publishing. GitHub Actions runs both checks on pushes to `main` and pull requests.
+Kontrolleri çalıştırmak için:
 
-Live portfolio: https://react-portfolio-topaz-ten.vercel.app/
+```bash
+npm test
+npm run build
+```
 
-Live projects: [Kahve Durağı](https://coffee-app-react.vercel.app/), [Movie Explorer](https://movie-explorer-react-sigma.vercel.app/), [React Login Form](https://login-form-react-indol.vercel.app/).
+GitHub Actions, `main` dalına yapılan gönderimlerde ve pull request'lerde testleri ve üretim derlemesini çalıştırır.
 
-## Personalize
+### İçeriği düzenleme
 
-- Edit `src/data/portfolio.json` for profile details, projects, and links. Empty links are displayed but disabled or omitted.
-- Edit `src/data/copy.js` for English and Turkish wording.
-- Replace images in `public/assets/` only with the owner's approved assets.
+- Profil bilgileri, projeler ve bağlantılar `src/data/portfolio.json` dosyasında bulunur. Boş bırakılan bağlantılar gösterilmez veya devre dışı bırakılır.
+- Türkçe ve İngilizce arayüz metinleri `src/data/copy.js` dosyasındadır.
+- Görseller `public/assets/` klasöründedir.
+- Doğum tarihi ve tercih edilen pozisyon alanları henüz doldurulmamıştır.
 
-## Mock API
+### Örnek API
 
-`src/hooks/usePortfolioData.js` shows the local JSON immediately, then loads the external response. `src/services/portfolioApi.js` sends only public project entries to `https://jsonplaceholder.typicode.com/posts` with Axios POST. JSONPlaceholder echoes the request without persisting it. The response is checked against known project IDs, repository URLs, site URLs, and screenshot filenames before it is rendered. If the service is unavailable or the response is invalid, local data stays visible with a retry message. The owner's email and profile details are never included in the POST body. Inspect the request in your browser's Network tab when verifying the integration.
+`src/hooks/usePortfolioData.js`, sayfa açılır açılmaz yerel proje verilerini gösterir. `src/services/portfolioApi.js`, proje listesini Axios ile JSONPlaceholder'ın `/posts` adresine POST isteği olarak gönderir. Dönen yanıt doğrulanır ve uygunsa kartlar bu yanıtla güncellenir. İstek başarısız olursa yerel veriler görünmeye devam eder ve yeniden deneme seçeneği sunulur. İsteğe profil veya iletişim bilgileri eklenmez. İstek tarayıcının **Network/Ağ** panelinden incelenebilir.
 
-## Structure and accessibility
+### Kod yapısı ve erişilebilirlik
 
-Each visible section lives in `src/components/`. `App.jsx` passes content into them through props. `src/preferences.jsx` provides global theme and language state, backed by `src/hooks/usePersistentPreference.js`; invalid or blocked localStorage values fall back safely. The page has a keyboard skip link, labelled navigation and controls, visible focus styles, reduced-motion support, and responsive layouts for desktop, tablet, and mobile. The project screenshots are lazy loaded.
+Sayfa bölümleri `src/components/` içindeki bileşenlere ayrılmıştır. `App.jsx`, verileri bileşenlere props üzerinden aktarır. `src/preferences.jsx`, tema ve dil durumunu Context API ile paylaşır; `src/hooks/usePersistentPreference.js` tercihleri `localStorage` ile eşitler. Sayfada semantik HTML, etiketli gezinme ve kontroller, görünür odak stilleri, azaltılmış hareket tercihi ve farklı ekran boyutlarına uyarlanan düzenler bulunur. Proje görselleri ihtiyaç duyulduğunda yüklenir.
 
-## Deployment
+### Yayın
 
-The **private** GitHub repository is connected to Vercel with the Vite preset. The build command is `npm run build`, and the output directory is `dist`. The live site is public even though the source repository is private. The three project live URLs are stored in `src/data/portfolio.json`.
+**Private** GitHub deposu Vercel'e bağlıdır. Derleme komutu `npm run build`, çıktı klasörü `dist` olarak ayarlanmıştır. Kaynak kod deposu private olsa da canlı site herkese açıktır.
+
+## English
+
+React and Vite implementation of the Figma **İkinci Alternatif** design (node `2:15`). The site supports desktop and mobile layouts, Context API theme and language preferences saved to `localStorage`, JSON-driven content, and an Axios request to a public mock API.
+
+**Live portfolio:** https://react-portfolio-topaz-ten.vercel.app/
+
+**Live projects:** [Kahve Durağı](https://coffee-app-react.vercel.app/) · [Movie Explorer](https://movie-explorer-react-sigma.vercel.app/) · [React Login Form](https://login-form-react-indol.vercel.app/)
+
+### Run
+
+```bash
+npm install
+npm run dev
+```
+
+Run the checks with:
+
+```bash
+npm test
+npm run build
+```
+
+GitHub Actions runs tests and a production build on pushes to `main` and pull requests.
+
+### Personalize
+
+- Edit `src/data/portfolio.json` for profile details, projects, and links. Empty links are omitted or disabled.
+- Edit `src/data/copy.js` for Turkish and English interface text.
+- Images are stored in `public/assets/`.
+- Birth date and preferred role are still blank.
+
+### Mock API
+
+`src/hooks/usePortfolioData.js` displays local project data immediately. `src/services/portfolioApi.js` sends the project list to JSONPlaceholder's `/posts` endpoint with Axios POST. The response is validated before the cards are updated. If the request fails, local projects remain visible and a retry option is offered. Profile and contact details are not sent. You can inspect the request in the browser's Network panel.
+
+### Structure and accessibility
+
+Page sections are split into components under `src/components/`. `App.jsx` passes data through props. `src/preferences.jsx` shares theme and language state through Context API, while `src/hooks/usePersistentPreference.js` synchronizes preferences with `localStorage`. The page uses semantic HTML, labelled navigation and controls, visible focus styles, reduced-motion support, and responsive layouts. Project images are lazy loaded.
+
+### Deployment
+
+The **private** GitHub repository is connected to Vercel. The build command is `npm run build`, and the output directory is `dist`. The live site is public while the source repository remains private.
