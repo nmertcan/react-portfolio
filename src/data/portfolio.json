@@ -1,0 +1,83 @@
+{
+  "identity": {
+    "name": "Nuri Mert Can",
+    "initials": "N",
+    "email": "nmertcan@icloud.com",
+    "github": "https://github.com/nmertcan",
+    "linkedin": "https://www.linkedin.com/in/nmertcan/",
+    "blog": ""
+  },
+  "profile": {
+    "birthDate": "",
+    "city": "Muğla",
+    "education": {
+      "en": "Anadolu University — Banking and Insurance",
+      "tr": "Anadolu Üniversitesi — Bankacılık ve Sigortacılık"
+    },
+    "role": ""
+  },
+  "skills": [
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "description": {
+        "en": "Interactive interfaces, validation, search, and filtering in public projects.",
+        "tr": "Herkese açık projelerde etkileşimli arayüzler, doğrulama, arama ve filtreleme."
+      }
+    },
+    {
+      "id": "react",
+      "name": "React.Js",
+      "description": {
+        "en": "Component-based applications with routing, state, and responsive layouts.",
+        "tr": "Yönlendirme, durum yönetimi ve responsive düzenlerle bileşen tabanlı uygulamalar."
+      }
+    },
+    {
+      "id": "api",
+      "name": "REST APIs",
+      "description": {
+        "en": "Axios requests and API-backed content in coffee and movie applications.",
+        "tr": "Kahve ve film uygulamalarında Axios istekleri ve API tabanlı içerik."
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "coffee",
+      "title": "Kahve Durağı",
+      "tags": ["react", "axios", "router"],
+      "repository": "https://github.com/nmertcan/coffee_app_react",
+      "site": "https://coffee-app-react.vercel.app/",
+      "preview": "coffee-app.jpg",
+      "description": {
+        "en": "A coffee ordering app with search, category filters, product details, a cart, and order management. It uses an API and falls back to demo coffee data when needed.",
+        "tr": "Arama, kategori filtreleri, ürün detayları, sepet ve sipariş yönetimi sunan kahve sipariş uygulaması. API erişilemezse örnek kahve verileriyle çalışır."
+      }
+    },
+    {
+      "id": "movies",
+      "title": "Movie Explorer",
+      "tags": ["react", "axios", "context"],
+      "repository": "https://github.com/nmertcan/movie_explorer_react",
+      "site": "https://movie-explorer-react-sigma.vercel.app/",
+      "preview": "movie-explorer.jpg",
+      "description": {
+        "en": "A responsive movie browser with category filtering, search, detail pages, and a favorites flow. Movie data comes from the SampleAPIs Movie API.",
+        "tr": "Kategori filtreleme, arama, detay sayfaları ve favoriler akışı içeren responsive film uygulaması. Film verilerini SampleAPIs Movie API üzerinden alır."
+      }
+    },
+    {
+      "id": "login",
+      "title": "React Login Form",
+      "tags": ["react", "reactstrap", "cypress"],
+      "repository": "https://github.com/nmertcan/login_form_react",
+      "site": "https://login-form-react-indol.vercel.app/",
+      "preview": "login-form.jpg",
+      "description": {
+        "en": "A login form with email and password validation, clear error feedback, a success route, and Cypress end-to-end tests.",
+        "tr": "E-posta ve şifre doğrulaması, anlaşılır hata mesajları, başarı sayfası ve Cypress uçtan uca testleri olan giriş formu."
+      }
+    }
+  ]
+}
