@@ -1,89 +1,52 @@
-# React Portfolio
+# React Portfolio | Responsive Developer Portfolio
 
-[Türkçe](#türkçe) · [English](#english)
+[English](#english) · [Canlı portfolyo](https://react-portfolio-topaz-ten.vercel.app/)
 
 ## Türkçe
 
-Figma'daki **İkinci Alternatif** tasarımının (`2:15` numaralı düğüm) React ve Vite ile geliştirilmiş portföy uygulaması. Masaüstü ve mobil ekranlara uyum sağlar. Tema ve dil tercihleri Context API ile yönetilir ve `localStorage` içinde saklanır. İçerik yerel JSON dosyasından okunur; proje verileri ayrıca Axios ile bir örnek API'ye gönderilir.
+**React Portfolio**, Figma'daki *İkinci Alternatif* tasarımının (düğüm `2:15`) React ve Vite ile uygulanmış responsive portfolyo projesidir. **Bileşen mimarisi, Context API, kalıcı kullanıcı tercihleri, erişilebilirlik ve API hata yönetimi** konularını gösterir.
 
-**Canlı portföy:** https://react-portfolio-topaz-ten.vercel.app/
+### Özellikler
+- Masaüstü ve mobil ekranlara uyumlu düzen
+- Context API ile tema ve dil tercihleri; `localStorage` ile kalıcılık
+- Yerel JSON tabanlı profil/proje içeriği
+- Axios ile JSONPlaceholder örnek API isteği; yanıt doğrulama ve başarısızlıkta yerel verilere dönüş
+- Semantik HTML, klavye odağı, azaltılmış hareket tercihi ve lazy-loaded görseller
+- GitHub Actions üzerinde test ve production build kontrolleri
 
-**Canlı projeler:** [Kahve Durağı](https://coffee-app-react.vercel.app/) · [Movie Explorer](https://movie-explorer-react-sigma.vercel.app/) · [React Login Form](https://login-form-react-indol.vercel.app/)
+**Teknolojiler:** React 19 · JavaScript · Vite · Axios · Context API · CSS · Prettier · GitHub Actions · Vercel
 
-### Kurulum ve çalıştırma
+### Öne çıkan projeler
+- [Kahve Durağı](https://github.com/nmertcan/coffee_app_react) — API tabanlı kahve ve sipariş arayüzü · [Demo](https://coffee-app-react.vercel.app/)
+- [Movie Explorer](https://github.com/nmertcan/movie_explorer_react) — film arama, kategoriler, kalıcı favoriler · [Demo](https://movie-explorer-react-sigma.vercel.app/)
+- [React Login Form](https://github.com/nmertcan/login_form_react) — form ve istemci yönlendirmesi · [Demo](https://login-form-react-indol.vercel.app/)
+- [Teknolojik Market](https://github.com/nmertcan/sepet_uygulamasi_react) — React state yönetimi ve sepet
 
+### Kurulum ve kontrol
 ```bash
 npm install
 npm run dev
-```
-
-Kontrolleri çalıştırmak için:
-
-```bash
 npm test
 npm run build
 ```
 
-GitHub Actions, `main` dalına yapılan gönderimlerde ve pull request'lerde testleri ve üretim derlemesini çalıştırır.
+### İçeriği özelleştirme
+- Profil, projeler ve bağlantılar: `src/data/portfolio.json`
+- Türkçe/İngilizce metinler: `src/data/copy.js`
+- Görseller: `public/assets/`
 
-### İçeriği düzenleme
+Boş bağlantılar gösterilmez veya devre dışı bırakılır. Portfolyodaki kişisel bilgileri güncellemek için önce veri dosyasını düzenleyin.
 
-- Profil bilgileri, projeler ve bağlantılar `src/data/portfolio.json` dosyasında bulunur. Boş bırakılan bağlantılar gösterilmez veya devre dışı bırakılır.
-- Türkçe ve İngilizce arayüz metinleri `src/data/copy.js` dosyasındadır.
-- Görseller `public/assets/` klasöründedir.
-- Doğum tarihi ve tercih edilen pozisyon alanları henüz doldurulmamıştır.
-
-### Örnek API
-
-`src/hooks/usePortfolioData.js`, sayfa açılır açılmaz yerel proje verilerini gösterir. `src/services/portfolioApi.js`, proje listesini Axios ile JSONPlaceholder'ın `/posts` adresine POST isteği olarak gönderir. Dönen yanıt doğrulanır ve uygunsa kartlar bu yanıtla güncellenir. İstek başarısız olursa yerel veriler görünmeye devam eder ve yeniden deneme seçeneği sunulur. İsteğe profil veya iletişim bilgileri eklenmez. İstek tarayıcının **Network/Ağ** panelinden incelenebilir.
-
-### Kod yapısı ve erişilebilirlik
-
-Sayfa bölümleri `src/components/` içindeki bileşenlere ayrılmıştır. `App.jsx`, verileri bileşenlere props üzerinden aktarır. `src/preferences.jsx`, tema ve dil durumunu Context API ile paylaşır; `src/hooks/usePersistentPreference.js` tercihleri `localStorage` ile eşitler. Sayfada semantik HTML, etiketli gezinme ve kontroller, görünür odak stilleri, azaltılmış hareket tercihi ve farklı ekran boyutlarına uyarlanan düzenler bulunur. Proje görselleri ihtiyaç duyulduğunda yüklenir.
-
-### Yayın
-
-Proje Vercel üzerinden yayınlanır. Derleme komutu `npm run build`, çıktı klasörü `dist` olarak ayarlanmıştır.
+**Canlı portfolyo:** https://react-portfolio-topaz-ten.vercel.app/
 
 ## English
 
-React and Vite implementation of the Figma **İkinci Alternatif** design (node `2:15`). The site supports desktop and mobile layouts, Context API theme and language preferences saved to `localStorage`, JSON-driven content, and an Axios request to a public mock API.
+A responsive React/Vite portfolio implementing the Figma *İkinci Alternatif* design (node `2:15`). It demonstrates **component-based architecture, Context API preferences, persistent settings, accessible UI, and defensive API integration**.
 
-**Live portfolio:** https://react-portfolio-topaz-ten.vercel.app/
+**Features:** responsive layouts, bilingual UI, light/dark preferences, JSON-driven content, Axios mock API with local-data fallback, semantic HTML, keyboard focus styles, reduced-motion support, and GitHub Actions CI.
 
-**Live projects:** [Kahve Durağı](https://coffee-app-react.vercel.app/) · [Movie Explorer](https://movie-explorer-react-sigma.vercel.app/) · [React Login Form](https://login-form-react-indol.vercel.app/)
+**Stack:** React 19, JavaScript, Vite, Axios, Context API, CSS, Prettier, GitHub Actions, Vercel.
 
-### Run
+**Run:** `npm install && npm run dev` · **Checks:** `npm test && npm run build`
 
-```bash
-npm install
-npm run dev
-```
-
-Run the checks with:
-
-```bash
-npm test
-npm run build
-```
-
-GitHub Actions runs tests and a production build on pushes to `main` and pull requests.
-
-### Personalize
-
-- Edit `src/data/portfolio.json` for profile details, projects, and links. Empty links are omitted or disabled.
-- Edit `src/data/copy.js` for Turkish and English interface text.
-- Images are stored in `public/assets/`.
-- Birth date and preferred role are still blank.
-
-### Mock API
-
-`src/hooks/usePortfolioData.js` displays local project data immediately. `src/services/portfolioApi.js` sends the project list to JSONPlaceholder's `/posts` endpoint with Axios POST. The response is validated before the cards are updated. If the request fails, local projects remain visible and a retry option is offered. Profile and contact details are not sent. You can inspect the request in the browser's Network panel.
-
-### Structure and accessibility
-
-Page sections are split into components under `src/components/`. `App.jsx` passes data through props. `src/preferences.jsx` shares theme and language state through Context API, while `src/hooks/usePersistentPreference.js` synchronizes preferences with `localStorage`. The page uses semantic HTML, labelled navigation and controls, visible focus styles, reduced-motion support, and responsive layouts. Project images are lazy loaded.
-
-### Deployment
-
-The project is deployed through Vercel. The build command is `npm run build`, and the output directory is `dist`.
+**Live:** https://react-portfolio-topaz-ten.vercel.app/
