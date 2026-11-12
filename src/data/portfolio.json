@@ -14,7 +14,7 @@
       "en": "Anadolu University — Banking and Insurance",
       "tr": "Anadolu Üniversitesi — Bankacılık ve Sigortacılık"
     },
-    "role": ""
+    "role": "IT Technician | Aspiring Full Stack Developer"
   },
   "skills": [
     {
@@ -46,7 +46,11 @@
     {
       "id": "coffee",
       "title": "Kahve Durağı",
-      "tags": ["react", "axios", "router"],
+      "tags": [
+        "react",
+        "axios",
+        "router"
+      ],
       "repository": "https://github.com/nmertcan/coffee_app_react",
       "site": "https://coffee-app-react.vercel.app/",
       "preview": "coffee-app.jpg",
@@ -58,7 +62,11 @@
     {
       "id": "movies",
       "title": "Movie Explorer",
-      "tags": ["react", "axios", "context"],
+      "tags": [
+        "react",
+        "axios",
+        "context"
+      ],
       "repository": "https://github.com/nmertcan/movie_explorer_react",
       "site": "https://movie-explorer-react-sigma.vercel.app/",
       "preview": "movie-explorer.jpg",
@@ -70,7 +78,11 @@
     {
       "id": "login",
       "title": "React Login Form",
-      "tags": ["react", "reactstrap", "cypress"],
+      "tags": [
+        "react",
+        "reactstrap",
+        "cypress"
+      ],
       "repository": "https://github.com/nmertcan/login_form_react",
       "site": "https://login-form-react-indol.vercel.app/",
       "preview": "login-form.jpg",
